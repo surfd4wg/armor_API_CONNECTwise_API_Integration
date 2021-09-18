@@ -33,12 +33,12 @@ CONNECTwise & ARMOR integration workflow:
 ## Security
 
 1. At-Rest: Sensitive credentials
-  All usernames, passwords, account numbers, API keys, public and private keys and clientIds 
+  - All usernames, passwords, account numbers, API keys, public and private keys and clientIds 
   are passed into the Python scripts as command line variables, so that they aren't stored
   anywhere, and also this allows a user to quickly change or modify keys and then turnaround
   and use the same python scripts.
 2. In-Transit: 
-  All HTTP calls use HTTPS, so that data on the wire, that is data being transferred to and
+  - All HTTP calls use HTTPS, so that data on the wire, that is data being transferred to and
   from the ARMOR API and the CONNECTwise API, is always encrypted.
 
 ## Sync Companies
