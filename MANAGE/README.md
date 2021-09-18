@@ -46,10 +46,10 @@ Prerequisites for the middleware box:
 1. Sync CONNECTwise companies with ARMOR companies.
   - Create 4 new custom fields for company overview in CONNECTwise.
   - This is done in the CONNECTwise portal under System -> Setup Tables.
-  -- ARMORcompanyId
-  -- ARMORcompanyName
-  -- ARMORparentId
-  -- ARMORdateUpdated
+    - ARMORcompanyId
+    - ARMORcompanyName
+    - ARMORparentId
+    - ARMORdateUpdated
 
 2. Get ARMOR company accounts and addresses
   Run python3 script ARMOR_get_accounts_list_and_addresses.py 
