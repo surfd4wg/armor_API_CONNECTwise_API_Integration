@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """
+# AUTHOR: Craig Ellrod, Cloud Security Architect
 # Run python3 script ARMOR_get_accounts_list_and_addresses.py 
 # Input parameters: Armor Username, Armor Password, Armor AccountId 
 # Run example: ./ARMOR_get_accounts_list_and_addresses.py -u testuser@company.com -p Pa$$w0Rd -a XXXX
