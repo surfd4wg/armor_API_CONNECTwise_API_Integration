@@ -102,7 +102,8 @@ Prerequisites for the middleware box:
 
 3. Get ARMOR tickets and post them to CONNECTwise
   - Run Python3 script CONNECTwise_get_ARMOR_tickets_and_post_to_CONNECTwise_company_service_board.py
-  - Description: Uses the ARMOR json response file produced in the previous step as input, Reads the ARMOR account Id from the file,
+  - Description: 
+    Uses the ARMOR json response file produced in the previous step as input, Reads the ARMOR account Id from the file,
     finds the matching company in CONNECTwise company, custom field ARMORcompanyId, takes that CONNECTwise company information
     and posts the tickets from the ARMOR file, into the CONNECTwise company's default service board.
   - Input parameters: 
