@@ -32,19 +32,18 @@ CONNECTwise & ARMOR integration workflow:
 
 ## Security
 
-1.a) At-Rest: Sensitive credentials
+1. At-Rest: Sensitive credentials
   All usernames, passwords, account numbers, API keys, public and private keys and clientIds 
   are passed into the Python scripts as command line variables, so that they aren't stored
   anywhere, and also this allows a user to quickly change or modify keys and then turnaround
   and use the same python scripts.
-
-1.b) In-Transit: 
+2. In-Transit: 
   All HTTP calls use HTTPS, so that data on the wire, that is data being transferred to and
   from the ARMOR API and the CONNECTwise API, is always encrypted.
 
 ## Sync Companies
 
-2) Sync CONNECTwise companies with ARMOR companies.
+1. Sync CONNECTwise companies with ARMOR companies.
   Create 4 new custom fields for company overview in CONNECTwise.
   This is done in the CONNECTwise portal under System -> Setup Tables.
   -ARMORcompanyId
@@ -52,7 +51,7 @@ CONNECTwise & ARMOR integration workflow:
   -ARMORparentId
   -ARMORdateUpdated
 
-2.a) Get ARMOR company accounts and addresses
+2. Get ARMOR company accounts and addresses
   Run python3 script ARMOR_get_accounts_list_and_addresses.py 
  Input parameters: Armor Username, Armor Password, Armor AccountId 
  Run example: ./ARMOR_get_accounts_list_and_addresses.py -u testusercompany.com -p Pa$$w0Rd -a XXXX
@@ -60,7 +59,7 @@ CONNECTwise & ARMOR integration workflow:
     Output: 
    -> creates a JSON file named "_response_get_ARMOR_accounts_addresses.json"
 
-2.b) Get CONNECTwise company accounts and addresses
+3. Get CONNECTwise company accounts and addresses
   Run python3 script CONNECTwise_get_accounts_list_and_addresses.py 
   Input parameters: companyId, clientId, publicKey, privateKey
   Input example: ./CONNECTwise_get_accounts_list_and_addresses.py -coId testcompany_a -clId XXXXXXXX-XXXX-XXXX-b7fd-XXXXXXXXXXXX -pub publicKey pri privateKey
@@ -69,7 +68,7 @@ CONNECTwise & ARMOR integration workflow:
   Output Contents:
    -> JSON file contains a list of companyies in CONNECTwise that belong to the clientId, companyId, publicKey and privateKey
 
-2.c) SYNC Armor companies with CONNECTwise companies
+4. SYNC Armor companies with CONNECTwise companies
   Run python3 script ARMOR_match_and_update_CONNECTwise_company_custom_fields.py
   Description: 
   Match the ARMOR accounts in "_response_get_ARMOR_accounts_addresses.json" with 
@@ -87,13 +86,13 @@ CONNECTwise & ARMOR integration workflow:
 
 ## Post Tickets          
 
-3) Tickets from ARMOR to CONNECTwise service tickets.
+1. Tickets from ARMOR to CONNECTwise service tickets.
   Create a new Service Board named "ARMORtickets" 
   This is performed in the CONNECTwise portal -> System -> Setup Tables
   Add Service Ticket statuses of "Completed", "Closed", "New" <- to match statuses that come out of the ARMOR ticketing Portal
   These statuses are added to the "ARMORtickets" service board, also in System -> Setup Tables
 
-3.a) Get ARMOR tickets for an Armor AccountId
+2. Get ARMOR tickets for an Armor AccountId
   Run Python3 script ARMOR_get_tickets_for_account.py
   Description: Uses the ARMOR API to pull all tickets (50 at a time) from ARMOR for the specified account XXXX
   Input parameters: Armor Username, Armor Password, Armor AccountId 
@@ -101,7 +100,7 @@ CONNECTwise & ARMOR integration workflow:
   Output:
    -> Creates a JSON file named "_response_get_ARMOR_tickets_for_account_XXXX.json 
 
-3 .b) Get ARMOR tickets and post them to CONNECTwise
+3. Get ARMOR tickets and post them to CONNECTwise
   Run Python3 script CONNECTwise_get_ARMOR_tickets_and_post_to_CONNECTwise_company_service_board.py
   Description: Uses the ARMOR json response file produced in the previous step as input, Reads the ARMOR account Id from the file,
   finds the matching company in CONNECTwise company, custom field ARMORcompanyId, takes that CONNECTwise company information
