@@ -1,5 +1,6 @@
 #!/usr/bin/python3 
 """
+# AUTHOR: Craig Ellrod, Cloud Security Architect
 # Run Python3 script CONNECTwise_get_ARMOR_tickets_and_post_to_CONNECTwise_company_service_board.py
 # Description: Uses the ARMOR json response file produced in the previous step as input, Reads the ARMOR account Id from the file,
 # finds the matching company in CONNECTwise company, custom field ARMORcompanyId, takes that CONNECTwise company information
