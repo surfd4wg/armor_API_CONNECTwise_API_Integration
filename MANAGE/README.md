@@ -1,6 +1,6 @@
-==================================
-=           IN THIS REPO         =
-==================================
+##################################
+#           IN THIS REPO         #
+##################################
 This Repo is intended to be used for integration between ARMOR Cloud Security's APIs and
 CONNECTwise's APIs - for use by Managed Service Providers (MSPs). This repo applies
 specifically to the CONNECTwise "MANAGE" product.
@@ -12,18 +12,18 @@ Files in this repo are all Python3 scripts:
 - ARMOR_get_tickets_for_account.py - Get support/service tickets from ARMOR
 - CONNECTwise_get_ARMOR_tickets_and_post_to_CONNECTwise_company_service_board.py - Add those tickets to CONNECTwise
 
-==================================
-=          PREREQUISITES         =
-==================================
+##################################
+#          PREREQUISITES         #
+##################################
 CONNECTwise & ARMOR integration workflow:
 -Prequisites for the middleware box:
 --Hardened Ubuntu Linux 20.04+
 --Python3
 --ARMOR python scripts
 
-==================================
-=            SECURITY            =
-==================================
+##################################
+#            SECURITY            #
+##################################
 1) Security.
 
 1.a) At-Rest: Sensitive credentials
@@ -36,9 +36,9 @@ CONNECTwise & ARMOR integration workflow:
   All HTTP calls use HTTPS, so that data on the wire, that is data being transferred to and
   from the ARMOR API and the CONNECTwise API, is always encrypted.
 
-==================================
-=          COMPANY SYNC          =
-==================================
+##################################
+#          COMPANY SYNC          #
+##################################
 2) Sync CONNECTwise companies with ARMOR companies.
   Create 4 new custom fields for company overview in CONNECTwise.
   This is done in the CONNECTwise portal under System -> Setup Tables.
@@ -80,9 +80,9 @@ CONNECTwise & ARMOR integration workflow:
   Output:
    -> Create a filename for each record updated in CONNECTwise, for example _response_update_CONNECTwise_company_custom_fields_(id)_(name).JSON
 
-==================================
-=            TICKETS             =
-==================================
+##################################
+#            TICKETS             #
+##################################
 3) Tickets from ARMOR to CONNECTwise service tickets.
   Create a new Service Board named "ARMORtickets" 
   This is performed in the CONNECTwise portal -> System -> Setup Tables
