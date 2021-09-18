@@ -52,21 +52,21 @@ Prerequisites for the middleware box:
     - ARMORdateUpdated
 
 2. Get ARMOR company accounts and addresses
-  Run python3 script ARMOR_get_accounts_list_and_addresses.py 
- Input parameters: Armor Username, Armor Password, Armor AccountId 
- Run example: ./ARMOR_get_accounts_list_and_addresses.py -u testusercompany.com -p Pa$$w0Rd -a XXXX
- Description: Uses the ARMOR API to pull all master (parent) and sub-accounts (child) for account number XXXX
-    Output: 
-   -> creates a JSON file named "_response_get_ARMOR_accounts_addresses.json"
+  - Run python3 script ARMOR_get_accounts_list_and_addresses.py 
+ - Input parameters: Armor Username, Armor Password, Armor AccountId 
+ - Run example: ./ARMOR_get_accounts_list_and_addresses.py -u testusercompany.com -p Pa$$w0Rd -a XXXX
+ - Description: Uses the ARMOR API to pull all master (parent) and sub-accounts (child) for account number XXXX
+  - Output: 
+    - creates a JSON file named "_response_get_ARMOR_accounts_addresses.json"
 
 3. Get CONNECTwise company accounts and addresses
-  Run python3 script CONNECTwise_get_accounts_list_and_addresses.py 
-  Input parameters: companyId, clientId, publicKey, privateKey
-  Input example: ./CONNECTwise_get_accounts_list_and_addresses.py -coId testcompany_a -clId XXXXXXXX-XXXX-XXXX-b7fd-XXXXXXXXXXXX -pub publicKey pri privateKey
-  Output:
-   -> Create a JSON file named "_response_get_CONNECTwise_accounts_and_addresses.json"
-  Output Contents:
-   -> JSON file contains a list of companyies in CONNECTwise that belong to the clientId, companyId, publicKey and privateKey
+  - Run python3 script CONNECTwise_get_accounts_list_and_addresses.py 
+  - Input parameters: companyId, clientId, publicKey, privateKey
+  - Input example: ./CONNECTwise_get_accounts_list_and_addresses.py -coId testcompany_a -clId XXXXXXXX-XXXX-XXXX-b7fd-XXXXXXXXXXXX -pub publicKey pri privateKey
+    - Output:
+    - Create a JSON file named "_response_get_CONNECTwise_accounts_and_addresses.json"
+  - Output Contents:
+    - JSON file contains a list of companyies in CONNECTwise that belong to the clientId, companyId, publicKey and privateKey
 
 4. SYNC Armor companies with CONNECTwise companies
   Run python3 script ARMOR_match_and_update_CONNECTwise_company_custom_fields.py
