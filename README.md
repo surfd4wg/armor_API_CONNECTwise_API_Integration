@@ -1,1 +1,3 @@
-# armor_API_CONNECTwise_API_Integration
+This repository contains two ARMOR API <--> CONNECTwise API Integrations
+- CONNECTwise MANAGE
+- CONNECTwise Automate
