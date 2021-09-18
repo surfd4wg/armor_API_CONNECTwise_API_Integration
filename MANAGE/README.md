@@ -19,8 +19,8 @@ Files in this repo are all Python3 scripts:
 
 - [Prequisites](#prerequisites)
 - [Security](#security)
-- [Sync Companies](#sync)
-- [Post Tickets](#post)
+- [Sync Companies](#sync-companies)
+- [Post Tickets](#post-tickets)
 
 ## Prerequisites
 
@@ -85,7 +85,7 @@ CONNECTwise & ARMOR integration workflow:
   Output:
    -> Create a filename for each record updated in CONNECTwise, for example _response_update_CONNECTwise_company_custom_fields_(id)_(name).JSON
 
-## Post Tickets from ARMOR to CONNECTwise            
+## Post Tickets          
 
 3) Tickets from ARMOR to CONNECTwise service tickets.
   Create a new Service Board named "ARMORtickets" 
