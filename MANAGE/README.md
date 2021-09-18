@@ -87,10 +87,10 @@ Prerequisites for the middleware box:
 ## Post Tickets          
 
 1. Tickets from ARMOR to CONNECTwise service tickets.
-  - Create a new Service Board named "ARMORtickets" 
-  - This is performed in the CONNECTwise portal -> System -> Setup Tables
-  - Add Service Ticket statuses of "Completed", "Closed", "New" <- to match statuses that come out of the ARMOR ticketing Portal
-  - These statuses are added to the "ARMORtickets" service board, also in System -> Setup Tables
+    - Create a new Service Board named "ARMORtickets" 
+    - This is performed in the CONNECTwise portal -> System -> Setup Tables
+    - Add Service Ticket statuses of "Completed", "Closed", "New" <- to match statuses that come out of the ARMOR ticketing Portal
+    - These statuses are added to the "ARMORtickets" service board, also in System -> Setup Tables
 
 2. Get ARMOR tickets for an Armor AccountId
   - Run Python3 script ARMOR_get_tickets_for_account.py
