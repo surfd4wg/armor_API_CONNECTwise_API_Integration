@@ -33,56 +33,57 @@ Prerequisites for the middleware box:
 ## Security
 
 1. At-Rest: Sensitive credentials
-  - All usernames, passwords, account numbers, API keys, public and private keys and clientIds 
-  are passed into the Python scripts as command line variables, so that they aren't stored
-  anywhere, and also this allows a user to quickly change or modify keys and then turnaround
-  and use the same python scripts.
+    - All usernames, passwords, account numbers, API keys, public and private keys and clientIds 
+      are passed into the Python scripts as command line variables, so that they aren't stored
+      anywhere, and also this allows a user to quickly change or modify keys and then turnaround
+      and use the same python scripts.
 2. In-Transit: 
-  - All HTTP calls use HTTPS, so that data on the wire, that is data being transferred to and
-  from the ARMOR API and the CONNECTwise API, is always encrypted.
+    - All HTTP calls use HTTPS, so that data on the wire, that is data being transferred to and
+      from the ARMOR API and the CONNECTwise API, is always encrypted.
 
 ## Sync Companies
 
 1. Sync CONNECTwise companies with ARMOR companies.
-  - Create 4 new custom fields for company overview in CONNECTwise.
-  - This is done in the CONNECTwise portal under System -> Setup Tables.
-    - ARMORcompanyId
-    - ARMORcompanyName
-    - ARMORparentId
-    - ARMORdateUpdated
+    - Create 4 new custom fields for company overview in CONNECTwise.
+    - This is done in the CONNECTwise portal under System -> Setup Tables.
+      - ARMORcompanyId
+      - ARMORcompanyName
+      - ARMORparentId
+      - ARMORdateUpdated
 
 2. Get ARMOR company accounts and addresses
-  - Run python3 script ARMOR_get_accounts_list_and_addresses.py 
-  - Input parameters: Armor Username, Armor Password, Armor AccountId 
-  - Run example: ./ARMOR_get_accounts_list_and_addresses.py -u testusercompany.com -p Pa$$w0Rd -a XXXX
-  - Description: Uses the ARMOR API to pull all master (parent) and sub-accounts (child) for account number XXXX
-  - Output: 
-    - creates a JSON file named "_response_get_ARMOR_accounts_addresses.json"
+    - Run python3 script ARMOR_get_accounts_list_and_addresses.py 
+    - Input parameters: Armor Username, Armor Password, Armor AccountId 
+    - Run example: ./ARMOR_get_accounts_list_and_addresses.py -u testusercompany.com -p Pa$$w0Rd -a XXXX
+    - Description: Uses the ARMOR API to pull all master (parent) and sub-accounts (child) for account number XXXX
+    - Output: 
+      - creates a JSON file named "_response_get_ARMOR_accounts_addresses.json"
 
 3. Get CONNECTwise company accounts and addresses
-  - Run python3 script CONNECTwise_get_accounts_list_and_addresses.py 
-  - Input parameters: companyId, clientId, publicKey, privateKey
-  - Input example: ./CONNECTwise_get_accounts_list_and_addresses.py -coId testcompany_a -clId XXXXXXXX-XXXX-XXXX-b7fd-XXXXXXXXXXXX -pub publicKey pri privateKey
-  - Output:
-    - Create a JSON file named "_response_get_CONNECTwise_accounts_and_addresses.json"
-  - Output Contents:
-    - JSON file contains a list of companyies in CONNECTwise that belong to the clientId, companyId, publicKey and privateKey
+    - Run python3 script CONNECTwise_get_accounts_list_and_addresses.py 
+    - Input parameters: companyId, clientId, publicKey, privateKey
+    - Input example: ./CONNECTwise_get_accounts_list_and_addresses.py -coId testcompany_a -clId XXXXXXXX-XXXX-XXXX-b7fd-XXXXXXXXXXXX -pub publicKey pri privateKey
+    - Output:
+      - Create a JSON file named "_response_get_CONNECTwise_accounts_and_addresses.json"
+    - Output Contents:
+      - JSON file contains a list of companyies in CONNECTwise that belong to the clientId, companyId, publicKey and privateKey
 
 4. SYNC Armor companies with CONNECTwise companies
-  - Run python3 script ARMOR_match_and_update_CONNECTwise_company_custom_fields.py
-  - Description: 
-    - Match the ARMOR accounts in "_response_get_ARMOR_accounts_addresses.json" with 
-    - CONNECTwise companies in "_response_get_CONNECTwise_accounts_and_addresses.json"
-    - and UPDATES those companies in CONNECTwise with ARMOR custom field information.
-  - Input parameters: companyId, clientId, publicKey, privateKey
-  - Run example: ./ARMOR_match_and_update_CONNECTwise_company_custom_fields.py -coId testcompany_a -clId XXXXXXXX-XXXX-XXXX-b7fd-XXXXXXXXXXXX -pub publicKey pri privateKey
-  - Fields that will be updated in CONNECTwise Company Overview are:
-   - ARMORcompanyId - a four digit integer identifying the account id in the Armor Management Portal
-   - ARMORcompanyName - a string identifying the account name in the Armor Management Portal
-   - ARMORparentId - a four digit integer identifying the account's parent account id in the Armor Management Portal
-   - ARMORdateUpdated - a date in ISO-8601 format that this update happened
-  - Output:
-    - Create a filename for each record updated in CONNECTwise, for example _response_update_CONNECTwise_company_custom_fields_(id)_(name).JSON
+    - Run python3 script ARMOR_match_and_update_CONNECTwise_company_custom_fields.py
+    - Description: 
+      Match the ARMOR accounts in "_response_get_ARMOR_accounts_addresses.json" with 
+      CONNECTwise companies in "_response_get_CONNECTwise_accounts_and_addresses.json"
+      and UPDATES those companies in CONNECTwise with ARMOR custom field information.
+    - Input parameters: companyId, clientId, publicKey, privateKey
+    - Run example: 
+      ./ARMOR_match_and_update_CONNECTwise_company_custom_fields.py -coId testcompany_a -clId XXXXXXXX-XXXX-XXXX-b7fd-XXXXXXXXXXXX -pub publicKey pri privateKey
+    - Fields that will be updated in CONNECTwise Company Overview are:
+      - ARMORcompanyId - a four digit integer identifying the account id in the Armor Management Portal
+      - ARMORcompanyName - a string identifying the account name in the Armor Management Portal
+      - ARMORparentId - a four digit integer identifying the account's parent account id in the Armor Management Portal
+      - ARMORdateUpdated - a date in ISO-8601 format that this update happened
+    - Output:
+      - Create a filename for each record updated in CONNECTwise, for example _response_update_CONNECTwise_company_custom_fields_(id)_(name).JSON
 
 ## Post Tickets          
 
