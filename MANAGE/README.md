@@ -101,26 +101,26 @@ Prerequisites for the middleware box:
       - Creates a JSON file named "_response_get_ARMOR_tickets_for_account_XXXX.json 
 
 3. Get ARMOR tickets and post them to CONNECTwise
-  - Run Python3 script CONNECTwise_get_ARMOR_tickets_and_post_to_CONNECTwise_company_service_board.py
-  - Description: 
-    Uses the ARMOR json response file produced in the previous step as input, Reads the ARMOR account Id from the file,
-    finds the matching company in CONNECTwise company, custom field ARMORcompanyId, takes that CONNECTwise company information
-    and posts the tickets from the ARMOR file, into the CONNECTwise company's default service board.
-  - Input parameters: 
-    - CONNECTwise companyId, 
-    - CONNECTwise clientId, 
-    - CONNECTwise publicKey, 
-    - CONNECTwise privateKey,
-    - ARMOR Tickets Input File,
-    - CONNECTwise Service Board (to post the ARMOR tickets to)
-  - Run example: ./CONNECTwise_get_ARMOR_tickets_and_post_to_CONNECTwise_company_service_board.py \
-    -coId testcompany_a \
-    -clId XXXXXXXX-XXXX-XXXX-b7fd-XXXXXXXXXXXX \
-    -pub publicKey \
-    -pri privateKey \
-    -inFile "_response_GET_ARMOR_tickets_for_account_XXXX.json" \
-    -SvcBoard "ARMORtickets"
-  - Output:
-    - Creates a JSON file named "_response_post_CONNECTwise_service_tickets_from_ARMOR_account_XXXX_(CompanyIdentifer).json"
-   -> Where XXXX equals the ARMOR AccountId, CompanyIdentifer is the matching Identifier in CONNECTwise
+    - Run Python3 script CONNECTwise_get_ARMOR_tickets_and_post_to_CONNECTwise_company_service_board.py
+    - Description: 
+      Uses the ARMOR json response file produced in the previous step as input, Reads the ARMOR account Id from the file,
+      finds the matching company in CONNECTwise company, custom field ARMORcompanyId, takes that CONNECTwise company information
+      and posts the tickets from the ARMOR file, into the CONNECTwise company's default service board.
+    - Input parameters: 
+      - CONNECTwise companyId
+      - CONNECTwise clientId 
+      - CONNECTwise publicKey
+      - CONNECTwise privateKey
+      - ARMOR Tickets Input File
+      - CONNECTwise Service Board (to post the ARMOR tickets to)
+    - Run example: ./CONNECTwise_get_ARMOR_tickets_and_post_to_CONNECTwise_company_service_board.py \
+      -coId testcompany_a \
+      -clId XXXXXXXX-XXXX-XXXX-b7fd-XXXXXXXXXXXX \
+     -pub publicKey \
+      -pri privateKey \
+      -inFile "_response_GET_ARMOR_tickets_for_account_XXXX.json" \
+      -SvcBoard "ARMORtickets"
+    - Output:
+      - Creates a JSON file named "_response_post_CONNECTwise_service_tickets_from_ARMOR_account_XXXX_(CompanyIdentifer).json"
+      -> Where XXXX equals the ARMOR AccountId, CompanyIdentifer is the matching Identifier in CONNECTwise
 
