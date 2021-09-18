@@ -1,5 +1,6 @@
 #!/usr/bin/python3 
 """
+# AUTHOR: Craig Ellrod, Cloud Security Architect
 # Module documentation.
 # Run python3 script CONNECTwise_get_accounts_list_and_addresses.py 
 # Input parameters: companyId, clientId, publicKey, privateKey
