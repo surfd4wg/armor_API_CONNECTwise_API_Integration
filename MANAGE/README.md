@@ -93,12 +93,12 @@ Prerequisites for the middleware box:
     - These statuses are added to the "ARMORtickets" service board, also in System -> Setup Tables
 
 2. Get ARMOR tickets for an Armor AccountId
-  - Run Python3 script ARMOR_get_tickets_for_account.py
-  - Description: Uses the ARMOR API to pull all tickets (50 at a time) from ARMOR for the specified account XXXX
-  - Input parameters: Armor Username, Armor Password, Armor AccountId 
-  - Run example: ./ARMOR_get_tickets_for_account.py -u testusercompany.com -p Pa$$w0Rd -a XXXX
-  - Output:
-    - Creates a JSON file named "_response_get_ARMOR_tickets_for_account_XXXX.json 
+    - Run Python3 script ARMOR_get_tickets_for_account.py
+    - Description: Uses the ARMOR API to pull all tickets (50 at a time) from ARMOR for the specified account XXXX
+    - Input parameters: Armor Username, Armor Password, Armor AccountId 
+    - Run example: ./ARMOR_get_tickets_for_account.py -u testusercompany.com -p Pa$$w0Rd -a XXXX
+    - Output:
+      - Creates a JSON file named "_response_get_ARMOR_tickets_for_account_XXXX.json 
 
 3. Get ARMOR tickets and post them to CONNECTwise
   - Run Python3 script CONNECTwise_get_ARMOR_tickets_and_post_to_CONNECTwise_company_service_board.py
