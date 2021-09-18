@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """
+# AUTHOR: Craig Ellrod, Cloud Security Architect
 # Run Python3 script ARMOR_get_tickets_for_account.py
 # Description: Uses the ARMOR API to pull all tickets (50 at a time) from ARMOR for the specified account XXXX
 # Input parameters: Armor Username, Armor Password, Armor AccountId 
