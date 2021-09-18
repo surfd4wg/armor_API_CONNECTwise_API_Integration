@@ -62,7 +62,7 @@ Prerequisites for the middleware box:
 3. Get CONNECTwise company accounts and addresses
     - Run python3 script CONNECTwise_get_accounts_list_and_addresses.py 
     - Input parameters: companyId, clientId, publicKey, privateKey
-    - Input example: ./CONNECTwise_get_accounts_list_and_addresses.py -coId testcompany_a -clId XXXXXXXX-XXXX-XXXX-b7fd-XXXXXXXXXXXX -pub publicKey pri privateKey
+    - Input example: ./CONNECTwise_get_accounts_list_and_addresses.py -coId testcompany_a -clId XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX -pub publicKey pri privateKey
     - Output:
       - Create a JSON file named "_response_get_CONNECTwise_accounts_and_addresses.json"
     - Output Contents:
@@ -73,7 +73,7 @@ Prerequisites for the middleware box:
     - Description: 
       Match the ARMOR accounts in "_response_get_ARMOR_accounts_addresses.json" with 
       CONNECTwise companies in "_response_get_CONNECTwise_accounts_and_addresses.json"
-      and UPDATES those companies in CONNECTwise with ARMOR custom field information.
+      and UPDATES those companies in CONNECTwise with ARMOR custom field information. 
     - Input parameters: companyId, clientId, publicKey, privateKey
     - Run example: 
       ./ARMOR_match_and_update_CONNECTwise_company_custom_fields.py -coId testcompany_a -clId XXXXXXXX-XXXX-XXXX-b7fd-XXXXXXXXXXXX -pub publicKey pri privateKey
