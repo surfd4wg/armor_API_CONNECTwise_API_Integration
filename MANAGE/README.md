@@ -10,8 +10,8 @@ specifically to the CONNECTwise "MANAGE" product.
 ## This repository contains:
 
 Files in this repo are all Python3 scripts:
-1. ARMOR_get_accounts_list_and_addresses.py - Retrieve MSP and Sub's account details
-2. CONNECTwise_get_accounts_list_and_addresses.py - Retrieve MSP and Sub's account details
+1. ARMOR_get_accounts_list_and_addresses.py - Retrieve MSP and Sub's account details (from ARMOR)
+2. CONNECTwise_get_accounts_list_and_addresses.py - Retrieve MSP and Sub's account details (from CONNECTwise)
 3. ARMOR_match_and_update_CONNECTwise_company_custom_fields.py - Match ARMOR accounts with CONNECTwise accounts, and update custom fields in CONNECTwise.
 4. ARMOR_get_tickets_for_account.py - Get support/service tickets from ARMOR
 5. CONNECTwise_get_ARMOR_tickets_and_post_to_CONNECTwise_company_service_board.py - Add those tickets to CONNECTwise
